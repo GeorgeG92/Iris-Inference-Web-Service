@@ -2,16 +2,18 @@
 The project includes code for serving an XGBoost multi-class classifier trained on the Iris dataset, served through a fastAPI interface.
 
 # Run web server
-
+```
 cd src
 uvicorn main:app --port 8005 (--reload)
+```
 
 # Load testing using Locust
 
 ## Run Locust service
+```
 cd src
 locust --host=http://localhost:8005 -f locustfile.py
-
+```
 ## Start load test
 
 Navigate to http://localhost:8089/ and start swarming
