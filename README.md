@@ -1,30 +1,34 @@
 # Iris-Inference-Web-Service
 The project includes code for serving an XGBoost multi-class classifier trained on the Iris dataset, served through a fastAPI interface.
 
-# Run web server
+## Run web server
 ```
 cd src
 uvicorn main:app --port 8005 (--reload)
 ```
+or through Docker
+```
+docker-compose up
+```
 
-# Load testing using Locust
+## Load testing using Locust
 
-## Run Locust service
+### Run Locust service
 ```
 cd src
 locust --host=http://localhost:8005 -f locustfile.py
 ```
-## Start load test
+### Start load test
 
 Navigate to http://localhost:8089/ and start swarming
 
-# Manually test the Api 
+## Manually test the Api 
 
-## Through jupyter notebook
+### Through jupyter notebook
 
-Run the Model Train.ipynb in the jupyter folder
+Run the last cell of Model Train.ipynb in the jupyter folder
 
-## Through python code
+### Through python code
 
 ``` Python
 session = requests.Session()
