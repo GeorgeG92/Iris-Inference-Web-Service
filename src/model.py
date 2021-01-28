@@ -6,7 +6,8 @@ import numpy as np
 
 
 class xgbModel():
-	def __init__(self, modelPath=os.path.join('..', 'model'), modelName='xgb.model', scalerPath=os.path.join('..', 'scaler'), scalerName='std_scaler.bin'):
+	def __init__(self, modelPath=os.path.join(os.path.join(os.path.dirname(__file__), '..', 'model')), modelName='xgb.model', 
+		scalerPath=os.path.join(os.path.join(os.path.dirname(__file__), '..', 'scaler')), scalerName='std_scaler.bin'):
 		""" Initialize model and scaler parameters """
 		print("\tLoading Model")
 		self.modelPath = os.path.join(modelPath, modelName)
