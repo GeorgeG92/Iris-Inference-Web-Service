@@ -11,6 +11,11 @@ or through Docker
 docker-compose up
 ```
 
+## Run Unit Tests
+Simply, run from root:
+```
+pytest
+```
 ## Load testing using Locust
 
 ### Run Locust service
