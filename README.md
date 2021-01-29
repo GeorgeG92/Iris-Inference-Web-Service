@@ -11,14 +11,19 @@ or through Docker
 docker-compose up
 ```
 
+## Run Unit Tests
+Simply, run from root:
+```
+pytest
+```
 ## Load testing using Locust
 
-### Run Locust service
+Run Locust service:
 ```
 cd src
 locust --host=http://localhost:8005 -f locustfile.py
 ```
-### Start load test
+Start load test:
 
 Navigate to http://localhost:8089/ and start swarming
 
