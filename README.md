@@ -7,13 +7,13 @@ pipreqs --encoding=utf8 ./
 # Run web server
 ```sh
 cd src
-uvicorn main:app --port 8005 (--reload)
+uvicorn main:app --port 8006 (--reload)
 ```
-or using Docker:
+or using docker-compose:
 ```sh
 docker-compose up
 ```
-afterwards, you can navigate the generated docs, experiment with the API's capabilities and behavior through the Swagger UI on http://localhost:port/docs, in the default case being http://localhost:8005/docs  
+using the specified host and container ports from the .env file. Afterwards, you can navigate the generated docs, experiment with the API's capabilities and behavior through the Swagger UI on http://localhost:port/docs, in the default case being http://localhost:8006/docs  
 
 # Run test suite
 From the root project folder:
@@ -25,8 +25,8 @@ pytest
 
 ## Run Locust service
 ```sh
-cd src
-locust --host=http://localhost:8005 -f locustfile.py
+cd load_test
+locust --host=http://localhost:8006 -f locustfile.py
 ```
 ## Start load test
 
@@ -53,7 +53,7 @@ data = {'SepalLengthCm':5.1, 'SepalWidthCm':3.5,
 tries = 100
 start = time.time()
 for i in range(tries):
-    response = session.get('http://localhost:8005', json=data)
+    response = session.get('http://localhost:8006', json=data)
     #print(response.json())
     continue
 end = time.time()
