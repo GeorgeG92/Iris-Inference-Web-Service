@@ -1,9 +1,12 @@
 version: '2.2'
 services:
-  testapp:
+  fastapitemplate:
     image: xgbimage
     build: .
-    command: uvicorn main:app --port 8005 --host 0.0.0.0 
+    command: uvicorn main:app --port ${CONTAINER_PORT} --host 0.0.0.0 
     container_name: xgbcontainer
+    environment:
+      - HOST_PORT
+      - CONTAINER_PORT
     ports:
-      - "8005:8005" 
+      - "${HOST_PORT}:${CONTAINER_PORT}" 
