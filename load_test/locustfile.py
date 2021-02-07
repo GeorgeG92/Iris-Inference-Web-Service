@@ -1,11 +1,14 @@
 from locust import HttpUser, TaskSet, task
 import json
+import random
 
-dataBody = {'SepalLengthCm':5.1, 'SepalWidthCm':3.5,
-        'PetalLengthCm':1.4 , 'PetalWidthCm':0.2}
+featureList = ['SepalLengthCm', 'SepalWidthCm', 'PetalLengthCm', 'PetalWidthCm']
 
 class MyUser(HttpUser):
-    @task(1)
-    def get_tests(self):
-        self.client.get("/", data= json.dumps(dataBody))
-                
+	@task(1)
+	def get_tests(self):
+		dataBody = {}
+		for feature in featureList:
+			dataBody[feature] = round(random.uniform(0.1, 10),3)
+		self.client.get("/", data= json.dumps(dataBody))
+				
