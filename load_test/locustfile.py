@@ -10,5 +10,5 @@ class MyUser(HttpUser):
 		dataBody = {}
 		for feature in featureList:
 			dataBody[feature] = round(random.uniform(0.1, 10),3)
-		self.client.get("/", data= json.dumps(dataBody))
+		self.client.post("/", data= json.dumps(dataBody))
 				
