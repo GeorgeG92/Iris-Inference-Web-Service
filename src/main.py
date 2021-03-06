@@ -2,7 +2,6 @@ import os
 import sys
 
 CURR_DIR = os.path.dirname(os.path.abspath(__file__))        # used for testing
-print(CURR_DIR)
 sys.path.append(CURR_DIR)
 
 import pandas as pd
@@ -13,6 +12,10 @@ from fastapi import APIRouter
 from fastapi import FastAPI, Query, Path, Cookie, Header, HTTPException, status
 from pydantic import BaseModel, Field
 from enum import Enum
+
+import logging
+logging.basicConfig(level=getattr(logging, args.logging_level), 
+		format='%(asctime)s | %(levelname)s | %(filename)s:%(funcName)s | %(message)s')
 
 app = FastAPI()
 model = xgbModel()

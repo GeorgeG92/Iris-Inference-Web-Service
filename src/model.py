@@ -3,13 +3,15 @@ from sklearn.preprocessing import StandardScaler
 from xgboost import XGBClassifier
 import os
 import numpy as np
+import logging
+logger = logging.getLogger(__file__)
 
 
 class xgbModel():
 	def __init__(self, modelPath=os.path.join(os.path.join(os.path.dirname(__file__), '..', 'model')), modelName='xgb.model', 
 		scalerPath=os.path.join(os.path.join(os.path.dirname(__file__), '..', 'scaler')), scalerName='std_scaler.bin'):
 		""" Initialize model and scaler parameters """
-		print("\tLoading Model")
+		logger.info("Model Loading")
 		self.modelPath = os.path.join(modelPath, modelName)
 		self.scalerPath = os.path.join(scalerPath, scalerName)
 		assert os.path.exists(self.modelPath), "modelPath "+str(self.modelPath)+" is invalid"
