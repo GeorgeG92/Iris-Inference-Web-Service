@@ -1,4 +1,4 @@
-https://img.shields.io/github/workflow/status/GeorgeG92/Iris-Inference-Web-Service/XGB-Classifier-CI
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/GeorgeG92/Iris-Inference-Web-Service/XGB-Classifier-CI)
 # Iris-Inference-Web-Service
 The project includes code for serving an XGBoost multi-class classifier trained on the Iris dataset, served through a docker-enabled fastAPI interface.Additionally, it includes pytest unit tests as well as load testing on the deployed service through through locust. Requirements can be extracted using pipreqs, by running the following command at the project root folder: 
 ```sh
