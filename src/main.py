@@ -14,7 +14,7 @@ from pydantic import BaseModel, Field
 from enum import Enum
 
 import logging
-logging.basicConfig(level=getattr(logging, args.logging_level), 
+logging.basicConfig(level=getattr(logging, 'INFO'), 
 		format='%(asctime)s | %(levelname)s | %(filename)s:%(funcName)s | %(message)s')
 
 app = FastAPI()
