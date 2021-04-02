@@ -14,8 +14,8 @@ from pydantic import BaseModel, Field
 from enum import Enum
 
 import logging
-logging.basicConfig(level=getattr(logging, 'INFO'), 
-		format='%(asctime)s | %(levelname)s | %(filename)s:%(funcName)s | %(message)s')
+logging.basicConfig(level=getattr(logging, args.logging_level), 
+		format="%(asctime)s|%(filename)-20.20s||%(funcName)-20.20s|%(levelname)-8.8s|%(message)s")
 
 app = FastAPI()
 model = xgbModel()
